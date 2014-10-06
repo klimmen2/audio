@@ -7,7 +7,6 @@
 <% @audios.each do |audio| %>
 <h4> <%= audio.name %> 
 <%= link_to 'загрузить', download_mp3_path(audio), class: "btn-sm" %>
-
 <%= link_to 'удалить', audio_path(audio), class: "btn-sm",
                     method: :delete, data: { confirm: 'Вы уверены что хотите удалить?' } %>
 </h4>
