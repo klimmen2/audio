@@ -1,0 +1,19 @@
+<h3> Моя страница </h3>
+<br>
+<%= link_to 'добавить аудио', new_audio_path, class: "btn btn-primary ", id:'new_audio' %>
+<%= link_to 'друзья', friend_index_user_path, class: "btn btn-primary " %>
+<%= link_to 'добавить друга', users_user_path, class: "btn btn-primary " %>
+<div id="all_audios">
+<% @audios.each do |audio| %>
+<h4> <%= audio.name %> 
+<%= link_to 'удалить', audio_path(audio), class: "btn-sm",
+                    method: :delete, data: { confirm: 'Вы уверены что хотите удалить?' } %>
+</h4>
+<%= audio_tag "#{audio.name}.mp3", id: "player#{audio.id}", controls: 'controls'%>
+
+<% end %>
+<div id="add_audio" > </div>
+</div>
+
+
+

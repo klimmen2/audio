@@ -1,0 +1,5 @@
+<h3> Мои друзья </h3>
+<br>
+<% @friends.each do |friend| %>
+	<h4><%=link_to @users.find_by(id:friend.friend_id).email, friend_show_user_path(friend.friend_id) %> </h4>
+<% end %>

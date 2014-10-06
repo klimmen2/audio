@@ -1,0 +1,20 @@
+
+<%= form_tag search_user_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>   
+    <%= submit_tag "поиск!" %>
+  </p>
+<% end %>
+
+<% @users.each do |user| %>
+<% if user.id != current_user.id %>
+<h4> <%= user.email %>  
+ <% if @friends.find_by(:friend_id => user.id).nil? %>
+ <%= link_to 'Добавить', friend_create_user_path(user.id), class: "btn btn " %>
+ <%else %>
+ <%= link_to 'уже в друзьях', friend_create_user_path(user.id), class: "btn btn " %>
+ <% end %>
+ </h4> 
+
+<% end %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Audio new</h1>
+<%= form_for :audio,  url: audio_index_path do |f| %>
+  <div class="form-group ">
+  <%= f.file_field :audio_file, required: true, class: " btn-primary" %>
+  </div>
+  <div class="form-group ">
+  <%= f.submit "Upload", id: "buttest" ,class: "buttest btn btn-primary" %>
+  </div>
+<% end %>
