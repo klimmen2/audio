@@ -23,4 +23,11 @@ class AudioController < ApplicationController
     p @data
     render :json => @data, status: :ok
   end
+
+  def download_mp3
+    name_file = Audio.find(params[:id]).name
+    send_file("public/audios/#{name_file}.mp3",
+              :filename => "#{name_file}.mp3",
+              :type => "application/mp3")
+  end
 end

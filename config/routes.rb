@@ -11,6 +11,7 @@ resources :user, only: [:show] do
     end
   end
   get '/audio/add_new_audio', to: 'audio#add_new_audio', as: 'add_new_audio'
+  get '/download_mp3/:id', to: 'audio#download_mp3', as: 'download_mp3'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
